@@ -1,0 +1,67 @@
+# Unreal Engine generated files
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# Build output
+Build/
+*.target
+*.modules
+*.version
+
+# IDE and editor files
+.vs/
+.vscode/
+.idea/
+*.sln
+*.VC.db
+*.VC.opendb
+*.opensdf
+*.sdf
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio / Rider build artifacts
+x64/
+x86/
+Win32/
+Win64/
+Debug/
+DebugGame/
+Development/
+Shipping/
+
+# Unreal local/editor cache
+*.log
+*.tmp
+*.cache
+*.tlog
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.lib
+
+# Plugin generated folders
+Plugins/*/Binaries/
+Plugins/*/Intermediate/
+
+# Python caches used by helper scripts
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Keep project source/content/docs/config
+!Config/
+!Content/
+!Docs/
+!Tools/
+!*.uproject
+!README*.md

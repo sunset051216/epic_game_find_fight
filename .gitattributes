@@ -1,0 +1,11 @@
+# Unreal Engine binary assets
+*.uasset binary
+*.umap binary
+*.ubulk binary
+*.uexp binary
+
+# Text files
+*.ini text eol=crlf
+*.uproject text eol=crlf
+*.md text eol=crlf
+*.py text eol=lf
