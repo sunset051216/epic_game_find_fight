@@ -2,6 +2,25 @@
 
 《潮蚀荒原》是一款基于 Unreal Engine 5.7 制作的 3D 第三人称单机搜打撤课程项目。游戏以“荒漠时代”和“海平面上涨后的废墟探索”为背景，玩家需要在限定时间内进入危险区域，探索宝箱、击杀怪物、收集金币，并在倒计时结束前成功撤离。
 
+## 可调试完整工程下载
+
+由于 UE 工程资源体积较大，完整可调试项目以 GitHub Release 分卷形式提供：
+
+- [Debug Project v0.2](https://github.com/sunset051216/epic_game_find_fight/releases/tag/debug-project-v0.2)：包含 `Config`、`Content`、`Docs`、`Tools`、`.uproject` 与 README，可用于 Unreal Engine 5.7 打开、查看和调试。
+- [Windows Playable Build v0.1](https://github.com/sunset051216/epic_game_find_fight/releases/tag/extractiongame-windows-v0.1)：可直接运行的 Windows 打包版本。
+
+调试工程打开流程：
+
+1. 在 `Debug Project v0.2` 页面下载全部 `ExtractionGame_DebugProject_Source_v0.2.tar.gz.part01` 至 `part04` 分卷，以及 `SHA256.txt` 校验文件。
+2. 将 4 个分卷放在同一个文件夹中，执行：
+
+```bat
+copy /b ExtractionGame_DebugProject_Source_v0.2.tar.gz.part01+ExtractionGame_DebugProject_Source_v0.2.tar.gz.part02+ExtractionGame_DebugProject_Source_v0.2.tar.gz.part03+ExtractionGame_DebugProject_Source_v0.2.tar.gz.part04 ExtractionGame_DebugProject_Source_v0.2.tar.gz
+```
+
+3. 解压合并后的 `ExtractionGame_DebugProject_Source_v0.2.tar.gz`。
+4. 使用 Unreal Engine 5.7 打开 `ExtractionGame.uproject`，即可查看蓝图、地图、UI、角色和相关资源。
+
 ## 一、项目基本信息
 
 - 游戏类型：3D 第三人称搜打撤
@@ -54,9 +73,9 @@
 
 | 角色 | 定位 | 生命 | 攻击 | 移动速度 | 开箱耗时 | 金币加成 |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| 废港护卫 | 高生命、高攻击，适合正面战斗 | 130 | 25 | 600 | 2.0 秒 | 0% |
-| 潮金拾荒者 | 移动速度快，适合快速搜刮和撤离 | 90 | 15 | 750 | 1.5 秒 | 0% |
-| 遗迹工程师 | 开箱最快，并拥有金币收益加成 | 100 | 12 | 600 | 1.2 秒 | 10% |
+| 废港护卫 | 高生命、高攻击，适合正面战斗 | 130 | 25 | 600 | 1.2 秒 | 0% |
+| 潮金拾荒者 | 移动速度快，适合快速搜刮和撤离 | 90 | 15 | 750 | 0.8 秒 | 0% |
+| 遗迹工程师 | 开箱最快，并拥有金币收益加成 | 100 | 12 | 600 | 0.7 秒 | 10% |
 
 角色选择结果会通过 `BP_GameInstance` 保存，并在进入地图后应用到玩家角色身上。
 
@@ -103,7 +122,7 @@
 玩家每击杀一个怪物，战斗力增加。实际伤害会随战斗力提升：
 
 ```text
-实际伤害 = 基础攻击 + 战斗力 * 1
+实际伤害 = 基础攻击 + 战斗力 * 5
 ```
 
 ### 撤离与失败
@@ -250,4 +269,3 @@ Tools                           地图生成和检查辅助脚本
 - 完善地铁潮蚀金库与荒漠信号废城的正式玩法内容。
 - 增加机关、陷阱、隐藏宝箱和地图事件。
 - 增加本局评价系统或金币累计存档系统。
-
